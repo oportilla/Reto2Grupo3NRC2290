@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:loggy/loggy.dart';
 
@@ -15,13 +19,20 @@ class ShoppingController extends GetxController {
     // los dos elementos que vamos a tener en la tienda
     entries.add(Product(0, "Toy car", 10));
     entries.add(Product(1, "Toy house", 20));
+    
   }
 
   void calcularTotal() {
     int newTotal = 0;
     // TODO
     // calcular el valor total de los elementos en el carro de compras
+    for (int i=0;i<entries.length;i++){
+      
+      newTotal= newTotal + (entries[i].price*entries[i].quantity);
+
+    }
     total.value = newTotal;
+    print(total);
   }
 
   agregarProducto(id) {
@@ -31,6 +42,8 @@ class ShoppingController extends GetxController {
     // después obtener el index de ese elemento, revisar el método indexOf de la lista
     // después hacer el incremento en la cantidad
     // finalmente actualizar entries usando el indice y el elemento actualizado
+    Product posicionIc= entries.firstWhere((item) => item.id==id);
+    posicionIc.quantity = posicionIc.quantity +1;
     calcularTotal();
   }
 
@@ -39,6 +52,14 @@ class ShoppingController extends GetxController {
     // TODO
     // similar a agregarProducto
     // validar cuando la cantidad es igual a cero
+    Product posicionId= entries.firstWhere((item) => item.id==id);
+    if (posicionId.quantity==0){
+      print('La cantidad no puede ser menor que cero');
+    }
+    else {
+      posicionId.quantity = posicionId.quantity-1;
+      } 
+      
     calcularTotal();
   }
 }
