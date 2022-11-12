@@ -32,7 +32,7 @@ class ShoppingController extends GetxController {
 
     }
     total.value = newTotal;
-    print(total);
+    
   }
 
   agregarProducto(id) {

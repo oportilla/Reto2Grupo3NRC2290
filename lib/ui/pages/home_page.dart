@@ -17,20 +17,20 @@ class HomePage extends StatelessWidget {
       const SizedBox(
         height: 60,
       ),
-      const Text("Brad Wilson",
+      const Text("Pedro Miguel",
           style: TextStyle(
               fontSize: 25.0,
-              color: Colors.blueGrey,
+              color: Colors.brown,
               letterSpacing: 2.0,
               fontWeight: FontWeight.w400)),
       const SizedBox(
         height: 20,
       ),
       const Text(
-        "Kilcoole, Waterford",
+        "Perez, Correa",
         style: TextStyle(
             fontSize: 18.0,
-            color: Colors.black45,
+            color: Colors.brown,
             letterSpacing: 2.0,
             fontWeight: FontWeight.w300),
       ),

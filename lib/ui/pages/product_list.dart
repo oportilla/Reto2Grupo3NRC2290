@@ -66,10 +66,17 @@ class _ProductListState extends State<ProductList> {
 
   Widget _card(Product product) {
     return Card(
+     
       margin: const EdgeInsets.all(4.0),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        Text(product.name),
-        Text(product.price.toString()),
+        Text(product.name,
+        style: const TextStyle(
+                color: Colors.brown,
+                )),
+        Text(product.price.toString(),
+        style: const TextStyle(
+                color: Colors.brown,
+                )),
         Column(
           children: [
             IconButton(
@@ -83,7 +90,7 @@ class _ProductListState extends State<ProductList> {
                   // incrementa el número de unidades del producto
                   // pasandole el product.id
                 },
-                icon: const Icon(Icons.arrow_upward)),
+                icon: const Icon(Icons.arrow_upward,color:Colors.brown)),
             IconButton(
                 onPressed: () {
                   setState(() {
@@ -94,18 +101,24 @@ class _ProductListState extends State<ProductList> {
                   // disminuye el número de unidades del producto
                   // pasandole el product.id
                 },
-                icon: const Icon(Icons.arrow_downward))
+                icon: const Icon(Icons.arrow_downward,color:Colors.brown))
           ],
         ),
         Column(
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text("Quantity"),
+              child: Text("Cantidad",
+              style: TextStyle(
+                color: Colors.brown,
+                )),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(product.quantity.toString()),
+              child: Text(product.quantity.toString(),
+              style: const TextStyle(
+                color: Colors.brown,
+                )),
             ),
           ],
         )
