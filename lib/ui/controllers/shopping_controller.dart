@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -54,7 +55,7 @@ class ShoppingController extends GetxController {
     // validar cuando la cantidad es igual a cero
     Product posicionId= entries.firstWhere((item) => item.id==id);
     if (posicionId.quantity==0){
-      print('La cantidad no puede ser menor que cero');
+     print('La cantidad no puede ser menor que cero');
     }
     else {
       posicionId.quantity = posicionId.quantity-1;
