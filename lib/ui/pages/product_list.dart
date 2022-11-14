@@ -70,13 +70,11 @@ class _ProductListState extends State<ProductList> {
       margin: const EdgeInsets.all(4.0),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Text(product.name,
-        style: const TextStyle(
-                color: Colors.brown,
-                )),
+        style: const TextStyle(color: Colors.brown,)
+        ),
         Text(product.price.toString(),
-        style: const TextStyle(
-                color: Colors.brown,
-                )),
+        style: const TextStyle(color: Colors.brown,)
+        ),
         Column(
           children: [
             IconButton(

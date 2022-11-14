@@ -54,12 +54,11 @@ class ShoppingController extends GetxController {
     // similar a agregarProducto
     // validar cuando la cantidad es igual a cero
     Product posicionId= entries.firstWhere((item) => item.id==id);
-    if (posicionId.quantity==0){
-     print('La cantidad no puede ser menor que cero');
+    posicionId.quantity = posicionId.quantity-1;
+    if (posicionId.quantity<0){
+     posicionId.quantity = 0;
     }
-    else {
-      posicionId.quantity = posicionId.quantity-1;
-      } 
+    
       
     calcularTotal();
   }
